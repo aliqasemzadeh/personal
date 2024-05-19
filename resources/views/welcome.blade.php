@@ -35,7 +35,8 @@
             <div class="flex-none hidden lg:block">
                 <ul class="menu menu-horizontal">
                     <!-- Navbar menu content here -->
-                    <li><a href="{{ route('register') }}" class="btn btn-outline btn-primary btn-sm mx-1">Register</a></li>
+                    <li><a href="{{ route('register') }}" class="btn btn-outline btn-primary btn-sm mx-1">Register</a>
+                    </li>
                     <li><a href="{{ route('login') }}" class="btn btn-outline btn-secondary btn-sm py-1">Login</a></li>
                 </ul>
             </div>
@@ -69,33 +70,45 @@
 
         <!-- Page content here -->
         <main>
+            <div class="text-sm breadcrumbs sticky top-1">
+                <ul>
+                    <li>
+                        <a>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 class="w-4 h-4 stroke-current">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                            </svg>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 class="w-4 h-4 stroke-current">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                            </svg>
+                            Documents
+                        </a>
+                    </li>
+                    <li>
+                          <span class="inline-flex gap-2 items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 stroke-current"><path
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            Add Document
+                          </span>
+                    </li>
+                </ul>
+            </div>
             <div class="hero min-h-screen bg-base-200">
-                <div class="hero-content flex-col lg:flex-row-reverse">
-                    <div class="text-center lg:text-left">
-                        <h1 class="text-5xl font-bold">Login now!</h1>
+                <div class="hero-content flex-col lg:flex-row">
+                    <img src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" class="max-w-sm rounded-lg shadow-2xl" />
+                    <div>
+                        <h1 class="text-5xl font-bold">Box Office News!</h1>
                         <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    </div>
-                    <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form class="card-body">
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Email</span>
-                                </label>
-                                <input type="email" placeholder="email" class="input input-bordered" required />
-                            </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Password</span>
-                                </label>
-                                <input type="password" placeholder="password" class="input input-bordered" required />
-                                <label class="label">
-                                    <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
-                            </div>
-                            <div class="form-control mt-6">
-                                <button class="btn btn-primary">Login</button>
-                            </div>
-                        </form>
+                        <button class="btn btn-primary">Get Started</button>
                     </div>
                 </div>
             </div>
