@@ -21,7 +21,7 @@
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle"/>
     <div class="drawer-content flex flex-col">
         <!-- Navbar -->
-        <div class="w-full navbar bg-base-300">
+        <div class="w-full navbar bg-base-300 sticky top-0">
             <div class="flex-none">
                 <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -31,12 +31,12 @@
                     </svg>
                 </label>
             </div>
-            <div class="flex-1 px-2 mx-2">{{ config('app.name', 'Laravel') }}</div>
+            <div class="flex-1 navbar-center">{{ config('app.name', 'Laravel') }}</div>
             <div class="flex-none hidden lg:block">
                 <ul class="menu menu-horizontal">
                     <!-- Navbar menu content here -->
-                    <li><a class="btn btn-outline btn-primary btn-sm mx-1">Register</a></li>
-                    <li><a class="btn btn-outline btn-secondary btn-sm py-1">Login</a></li>
+                    <li><a href="{{ route('register') }}" class="btn btn-outline btn-primary btn-sm mx-1">Register</a></li>
+                    <li><a href="{{ route('login') }}" class="btn btn-outline btn-secondary btn-sm py-1">Login</a></li>
                 </ul>
             </div>
             <div class="flex-none lg:hidden">
@@ -52,15 +52,12 @@
                         </svg>
                     </summary>
                     <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                        <li><a>Register</a></li>
-                        <li><a>Login</a></li>
+                        <li><a href="{{ route('register') }}">Register</a></li>
+                        <li><a href="{{ route('login') }}">Login</a></li>
                     </ul>
                 </details>
             </div>
         </div>
-        <!-- Livewire Navigation Menu -->
-        @livewire('navigation-menu')
-
         <!-- Page Heading -->
         @if (isset($header))
             <header class="bg-white dark:bg-gray-800 shadow">
@@ -69,10 +66,39 @@
                 </div>
             </header>
         @endif
-        <!-- Page content here -->
 
+        <!-- Page content here -->
         <main>
-            {{ $slot }}
+            <div class="hero min-h-screen bg-base-200">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <div class="text-center lg:text-left">
+                        <h1 class="text-5xl font-bold">Login now!</h1>
+                        <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    </div>
+                    <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                        <form class="card-body">
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Email</span>
+                                </label>
+                                <input type="email" placeholder="email" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Password</span>
+                                </label>
+                                <input type="password" placeholder="password" class="input input-bordered" required />
+                                <label class="label">
+                                    <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                                </label>
+                            </div>
+                            <div class="form-control mt-6">
+                                <button class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
     <div class="drawer-side">
