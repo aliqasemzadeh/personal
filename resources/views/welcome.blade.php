@@ -76,7 +76,7 @@
 
         <!-- Page content here -->
         <main>
-            <div class="text-sm breadcrumbs sticky top-1">
+            <div class="text-sm breadcrumbs">
                 <ul>
                     <li>
                         <a>
