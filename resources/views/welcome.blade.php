@@ -32,6 +32,7 @@
                 </label>
             </div>
             <div class="flex-1 navbar-center">{{ config('app.name', 'Laravel') }}</div>
+
             @guest
                 <div class="flex-none hidden lg:block">
                     <ul class="menu menu-horizontal">
@@ -118,6 +119,8 @@
                     </div>
                 </div>
             </div>
+
+
         </main>
     </div>
     <div class="drawer-side">
