@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="rtl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -108,9 +108,26 @@
     <div class="drawer-side">
         <label for="my-drawer-side" aria-label="close sidebar" class="drawer-overlay"></label>
         <ul class="menu p-4 w-80 min-h-full bg-base-200">
-            <!-- Sidebar content here -->
-            <li><a>{{ __('Home') }}</a></li>
-            <li><a>{{ __('Students') }}</a></li>
+            <li><a>Item 1</a></li>
+            <li>
+                <details open>
+                    <summary>Parent</summary>
+                    <ul>
+                        <li><a>Submenu 1</a></li>
+                        <li><a>Submenu 2</a></li>
+                        <li>
+                            <details open>
+                                <summary>Parent</summary>
+                                <ul>
+                                    <li><a>Submenu 1</a></li>
+                                    <li><a>Submenu 2</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                    </ul>
+                </details>
+            </li>
+            <li><a>Item 3</a></li>
         </ul>
     </div>
 </div>
