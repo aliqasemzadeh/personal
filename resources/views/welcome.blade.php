@@ -36,14 +36,14 @@
                 <div class="flex-none hidden lg:block">
                     <ul class="menu menu-horizontal">
                         <!-- Navbar menu content here -->
-                        <li><a class="btn btn-outline btn-primary btn-sm mx-1">{{ __('Register') }}</a></li>
-                        <li><a class="btn btn-outline btn-secondary btn-sm py-1">{{ __('Login') }}</a></li>
+                        <li><a href="{{ route('register') }}" class="btn btn-outline btn-primary btn-sm mx-1">{{ __('Register') }}</a></li>
+                        <li><a href="{{ route('login') }}" class="btn btn-outline btn-secondary btn-sm py-1">{{ __('Login') }}</a></li>
                     </ul>
                 </div>
                 <div class="flex-none lg:hidden">
 
-                    <details class="dropdown">
-                        <summary class="m-1 btn">
+                    <details class="dropdown dropdown-end">
+                        <summary class="m-1 btn btn-ghost btn-circle">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle"
                                  width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
                                  stroke-linecap="round" stroke-linejoin="round">
