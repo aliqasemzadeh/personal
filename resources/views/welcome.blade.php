@@ -32,32 +32,38 @@
                 </label>
             </div>
             <div class="flex-1 navbar-center">{{ config('app.name', 'Laravel') }}</div>
-            <div class="flex-none hidden lg:block">
-                <ul class="menu menu-horizontal">
-                    <!-- Navbar menu content here -->
-                    <li><a href="{{ route('register') }}" class="btn btn-outline btn-primary btn-sm mx-1">Register</a>
-                    </li>
-                    <li><a href="{{ route('login') }}" class="btn btn-outline btn-secondary btn-sm py-1">Login</a></li>
-                </ul>
-            </div>
-            <div class="flex-none lg:hidden">
-                <details class="dropdown">
-                    <summary class="m-1 btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle"
-                             width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
-                             stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/>
-                            <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/>
-                            <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"/>
-                        </svg>
-                    </summary>
-                    <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                        <li><a href="{{ route('register') }}">Register</a></li>
-                        <li><a href="{{ route('login') }}">Login</a></li>
+            @guest
+                <div class="flex-none hidden lg:block">
+                    <ul class="menu menu-horizontal">
+                        <!-- Navbar menu content here -->
+                        <li><a class="btn btn-outline btn-primary btn-sm mx-1">{{ __('Register') }}</a></li>
+                        <li><a class="btn btn-outline btn-secondary btn-sm py-1">{{ __('Login') }}</a></li>
                     </ul>
-                </details>
-            </div>
+                </div>
+                <div class="flex-none lg:hidden">
+
+                    <details class="dropdown">
+                        <summary class="m-1 btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle"
+                                 width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/>
+                                <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/>
+                                <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"/>
+                            </svg>
+                        </summary>
+                        <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                            <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                            <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                        </ul>
+                    </details>
+                </div>
+            @endguest
+
+            @auth
+
+            @endauth
         </div>
         <!-- Page Heading -->
         @if (isset($header))
@@ -118,8 +124,8 @@
         <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
         <ul class="menu p-4 w-80 min-h-full bg-base-200">
             <!-- Sidebar content here -->
-            <li><a>Sidebar Item 1</a></li>
-            <li><a>Sidebar Item 2</a></li>
+            <li><a>{{ __('Home') }}</a></li>
+            <li><a>{{ __('Students') }}</a></li>
         </ul>
     </div>
 </div>
