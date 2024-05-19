@@ -22,18 +22,34 @@
         <div class="drawer-content flex flex-col">
             <!-- Navbar -->
             <div class="w-full navbar bg-base-300">
-                <div class="flex-none lg:hidden">
+                <div class="flex-none">
                     <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </label>
                 </div>
-                <div class="flex-1 px-2 mx-2">Navbar Title</div>
+                <div class="flex-1 px-2 mx-2">{{ config('app.name', 'Laravel') }}</div>
                 <div class="flex-none hidden lg:block">
                     <ul class="menu menu-horizontal">
                         <!-- Navbar menu content here -->
-                        <li><a>Navbar Item 1</a></li>
-                        <li><a>Navbar Item 2</a></li>
+                        <li><a class="btn btn-outline btn-primary btn-sm mx-1">Register</a></li>
+                        <li><a class="btn btn-outline btn-secondary btn-sm py-1">Login</a></li>
                     </ul>
+                </div>
+                <div class="flex-none lg:hidden">
+                    <details class="dropdown">
+                        <summary class="m-1 btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                                <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                                <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
+                            </svg>
+                        </summary>
+                        <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                            <li><a>Register</a></li>
+                            <li><a>Login</a></li>
+                        </ul>
+                    </details>
                 </div>
             </div>
             <!-- Page content here -->
