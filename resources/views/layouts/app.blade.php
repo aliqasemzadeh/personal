@@ -88,8 +88,6 @@
                 </details>
             @endauth
         </div>
-        <!-- Livewire Navigation Menu -->
-        @livewire('navigation-menu')
 
         <!-- Page Heading -->
         @if (isset($header))
