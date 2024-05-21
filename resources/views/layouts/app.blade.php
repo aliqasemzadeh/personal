@@ -33,9 +33,6 @@
             </div>
             <div class="flex-1 px-2 mx-2">{{ config('app.name', 'Laravel') }}</div>
             @guest
-                <input id="user-drawer" type="checkbox" class="drawer-toggle" />
-                <label for="user-drawer" class="btn btn-primary drawer-button">Open drawer</label>
-
                 <div class="flex-none hidden lg:block">
                     <ul class="menu menu-horizontal">
                         <!-- Navbar menu content here -->
@@ -132,17 +129,7 @@
         </ul>
     </div>
 </div>
-<div class="drawer drawer-end">
-    <div class="drawer-side">
-        <label for="user-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-        <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-            <!-- Sidebar content here -->
-            <li><a>Sidebar Item 1</a></li>
-            <li><a>Sidebar Item 2</a></li>
 
-        </ul>
-    </div>
-</div>
 
 @stack('modals')
 
