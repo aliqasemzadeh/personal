@@ -15,9 +15,14 @@ class CheckGitHubFollow implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        $response = Http::get('https://api.github.com/users/'.$value.'/following/aliqasemzadeh');
-        if($response->status() != "204") {
-            $fail('Please follow teacher account.');
+        try {
+            $response = Http::get('https://api.github.com/users/'.$value.'/following/aliqasemzadeh');
+            if($response->status() != "204") {
+                $fail(__('Please follow teacher account.'));
+            }
+        }  catch (\Exception $e) {
+            $fail(__('No Internet Connection'));
         }
+
     }
 }
