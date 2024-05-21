@@ -106,10 +106,12 @@
     <div class="drawer-side">
         <label for="sidebar-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
         <ul class="menu p-4 w-80 min-h-full bg-base-200">
+            <li><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
             <li>
                 <details open>
                     <summary>دانشجویان</summary>
                     <ul>
+                        <li><a>درس ها</a></li>
                         <li><a>تمرین ها</a></li>
                     </ul>
                 </details>
