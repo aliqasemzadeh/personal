@@ -15,3 +15,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/admin/lesson/index', \App\Livewire\Admin\Lesson\Index::class)->name('admin.lesson.index');
+//Route::get('/admin/lesson/index', \App\Livewire\Admin\Lesson\Index::class);

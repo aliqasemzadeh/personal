@@ -100,7 +100,9 @@
         <!-- Page content here -->
 
         <main>
-            {{ $slot }}
+            <div class="container mx-auto px-4">
+                {{ $slot }}
+            </div>
         </main>
     </div>
     <div class="drawer-side">
@@ -108,7 +110,7 @@
         <ul class="menu p-4 w-80 min-h-full bg-base-200">
             <li><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
             <li>
-                <details open>
+                <details>
                     <summary>دانشجویان</summary>
                     <ul>
                         <li><a>درس ها</a></li>
@@ -116,6 +118,17 @@
                     </ul>
                 </details>
             </li>
+            @if(in_array(auth()->user()->id, config('personal.admins')))
+            <li>
+                <details>
+                    <summary>مدیریت کلاس ها</summary>
+                    <ul>
+                        <li><a href="{{ route('admin.lesson.index') }}">درس ها</a></li>
+                        <li><a>تمرین ها</a></li>
+                    </ul>
+                </details>
+            </li>
+            @endif
         </ul>
     </div>
 </div>
