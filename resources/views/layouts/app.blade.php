@@ -73,7 +73,7 @@
                         </svg>
                     </summary>
                     <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                        <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                        <li><a href="{{ route('profile.show') }}">{{ __('Profile') }}</a></li>
                         <li>
                             <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
@@ -106,26 +106,14 @@
     <div class="drawer-side">
         <label for="sidebar-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
         <ul class="menu p-4 w-80 min-h-full bg-base-200">
-            <li><a>Item 1</a></li>
             <li>
                 <details open>
-                    <summary>Parent</summary>
+                    <summary>دانشجویان</summary>
                     <ul>
-                        <li><a>Submenu 1</a></li>
-                        <li><a>Submenu 2</a></li>
-                        <li>
-                            <details open>
-                                <summary>Parent</summary>
-                                <ul>
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </details>
-                        </li>
+                        <li><a>تمرین ها</a></li>
                     </ul>
                 </details>
             </li>
-            <li><a>Item 3</a></li>
         </ul>
     </div>
 </div>
