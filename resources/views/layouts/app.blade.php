@@ -36,8 +36,8 @@
                 <div class="flex-none hidden lg:block">
                     <ul class="menu menu-horizontal">
                         <!-- Navbar menu content here -->
-                        <li><a class="btn btn-outline btn-primary btn-sm mx-1">{{ __('Register') }}</a></li>
-                        <li><a class="btn btn-outline btn-secondary btn-sm py-1">{{ __('Login') }}</a></li>
+                        <li><a href="{{ route('register') }}" class="btn btn-outline btn-primary btn-sm mx-1">{{ __('Register') }}</a></li>
+                        <li><a href="{{ route('login') }}" class="btn btn-outline btn-secondary btn-sm py-1">{{ __('Login') }}</a></li>
                     </ul>
                 </div>
                 <div class="flex-none lg:hidden">
