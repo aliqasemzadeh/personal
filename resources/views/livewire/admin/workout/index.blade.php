@@ -14,12 +14,12 @@
                 <tbody>
                 @foreach($workouts as $workout)
                     <!-- row 1 -->
-                    <tr>
+                    <tr :key="$workout->id">
                         <td>{{ $workout->description }}</td>
                         <td>{{ $workout->lesson->title }}</td>
                         <th>
                             <a href="{{ route('admin.workout.edit', [$workout->id]) }}" class="btn btn-primary btn-xs">{{ __('Edit') }}</a>
-                            <button class="btn btn-error btn-xs">{{ __('Delete') }}</button>
+                            <button class="btn btn-error btn-xs" wire:click="delete({{$workout->id}})" wire:confirm="{{ __('Are you sure?') }}">{{ __('Delete') }}</button>
                             <a href="{{ route('admin.workout.student', [$workout->id]) }}" class="btn btn-secondary btn-xs">{{ __('Students') }}</a>
                         </th>
                     </tr>

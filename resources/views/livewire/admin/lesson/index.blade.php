@@ -13,11 +13,11 @@
                 <tbody>
                 @foreach($lessons as $lesson)
                 <!-- row 1 -->
-                <tr>
+                <tr :key="$lesson->id">
                     <td>{{ $lesson->title }}</td>
                     <th>
                         <a href="{{ route('admin.lesson.edit', [$lesson->id]) }}" class="btn btn-primary btn-xs">{{ __('Edit') }}</a>
-                        <button class="btn btn-error btn-xs">{{ __('Delete') }}</button>
+                        <button class="btn btn-error btn-xs" wire:click="delete({{$lesson->id}})" wire:confirm="{{ __('Are you sure?') }}">{{ __('Delete') }}</button>
                         <a href="{{ route('admin.lesson.student', [$lesson->id]) }}" class="btn btn-secondary btn-xs">{{ __('Students') }}</a>
                     </th>
                 </tr>
