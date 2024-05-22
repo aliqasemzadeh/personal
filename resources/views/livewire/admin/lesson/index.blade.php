@@ -16,7 +16,9 @@
                 <tr>
                     <td>{{ $lesson->title }}</td>
                     <th>
-                        <button class="btn btn-ghost btn-xs">{{ __('Students') }}</button>
+                        <button class="btn btn-primary btn-xs">{{ __('Edit') }}</button>
+                        <button class="btn btn-error btn-xs">{{ __('Delete') }}</button>
+                        <a href="{{ route('admin.lesson.student') }}" class="btn btn-secondary btn-xs">{{ __('Students') }}</a>
                     </th>
                 </tr>
                 @endforeach
