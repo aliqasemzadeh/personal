@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\Lesson;
 
+use App\Models\Lesson;
 use Livewire\Component;
 
 class Create extends Component
@@ -16,6 +17,10 @@ class Create extends Component
             'description' => 'nullable',
         ]);
 
+        $lesson = Lesson::create([
+            'title' => $this->title,
+            'description' => $this->description,
+        ]);
 
 
     }
