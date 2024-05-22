@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Student\Lesson;
 
+use App\Models\StudentWorkout;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use App\Models\LessonWorkout;
@@ -10,10 +11,16 @@ class Workout extends Component
 {
     public LessonWorkout $workout;
     public $url;
+    public StudentWorkout $studentWorkout;
 
     public function mount(LessonWorkout $workout)
     {
         $this->workout = $workout;
+        $this->studentWorkout = StudentWorkout::firstOrCreate([
+            'workout_id' => $workout->id,
+            'lesson_id' => $workout->lesson_id,
+            'student_id' => auth()->user()->id
+        ]);
     }
 
     public function submit()
@@ -22,6 +29,10 @@ class Workout extends Component
             'url' => 'required|url'
         ]);
 
+        $this->studentWorkout->url = $this->url;
+        $this->studentWorkout->save();
+
+        dd($this->url);
 
     }
     public function render()

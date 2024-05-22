@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('workout_id');
             $table->integer('lesson_id');
             $table->integer('student_id');
-            $table->longText('url');
+            $table->longText('url')->nullable();
             $table->longText('description')->nullable();
             $table->timestamps();
         });
