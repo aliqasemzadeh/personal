@@ -17,12 +17,12 @@ class Create extends Component
             'description' => 'nullable',
         ]);
 
-        $lesson = Lesson::create([
+        Lesson::create([
             'title' => $this->title,
             'description' => $this->description,
         ]);
 
-
+        $this->redirectRoute('admin.lesson.index');
     }
     public function render()
     {
