@@ -1,34 +1,20 @@
 <div class="card">
-    <div class="card-body">
-        <div class="overflow-x-auto">
-            <table class="table">
-                <!-- head -->
-                <thead>
-                <tr>
-                    <th>{{ __('Title') }}</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($lessons as $lesson)
-                    <!-- row 1 -->
-                    <tr :key="$lesson->id">
-                        <td>{{ $lesson->lesson->title }}</td>
-                        <th>
-                            5654
-                        </th>
-                    </tr>
-                @endforeach
-                </tbody>
-                <!-- foot -->
-                <tfoot>
-                <tr>
-                    <th>{{ __('Title') }}</th>
-                    <th></th>
-                </tr>
-                </tfoot>
+    <summary class="card-body">
+        @foreach($lessons as $lesson)
+            <details class="collapse bg-base-200">
+                <summary class="collapse-title text-xl font-medium">
+                    {{ $lesson->lesson->title }}
+                </summary>
+                <div class="collapse-content">
+                    <p>
+                        @foreach($lesson->lesson->workouts as $workout)
+                            <livewire:student.lesson.workout :$workout />
+                            <x-section-border />
+                        @endforeach
+                    </p>
+                </div>
+            </details>
 
-            </table>
-        </div>
+        @endforeach
     </div>
 </div>

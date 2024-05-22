@@ -9,4 +9,9 @@ class Lesson extends Model
 {
     use HasFactory;
     public $fillable = ['title', 'description'];
+
+    public function workouts()
+    {
+        return $this->hasMany(LessonWorkout::class);
+    }
 }
