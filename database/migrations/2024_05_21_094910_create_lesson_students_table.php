@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('lesson_students', function (Blueprint $table) {
             $table->id();
-            $table->integer('student_id');
-            $table->integer('lesson_id');
+            $table->bigInteger('student_id');
+            $table->bigInteger('lesson_id');
             $table->double('midterm')->default(0);
             $table->double('final')->default(0);
-            $table->integer('absence')->default(0);
+            $table->bigInteger('absence')->default(0);
             $table->double('plus')->default(0);
             $table->timestamps();
         });

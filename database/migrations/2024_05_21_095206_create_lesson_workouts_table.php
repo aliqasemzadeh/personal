@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('lesson_workouts', function (Blueprint $table) {
             $table->id();
-            $table->integer('lesson_id');
+            $table->bigInteger('lesson_id');
             $table->text('description')->nullable();
             $table->timestamps();
         });

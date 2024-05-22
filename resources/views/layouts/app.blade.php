@@ -124,7 +124,7 @@
                     <summary>مدیریت کلاس ها</summary>
                     <ul>
                         <li><a href="{{ route('admin.lesson.index') }}">درس ها</a></li>
-                        <li><a>تمرین ها</a></li>
+                        <li><a href="{{ route('admin.workout.index') }}">تمرین ها</a></li>
                     </ul>
                 </details>
             </li>
