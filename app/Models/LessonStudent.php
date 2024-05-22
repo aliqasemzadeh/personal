@@ -11,6 +11,11 @@ class LessonStudent extends Model
     public $fillable  = ['lesson_id', 'student_id'];
     public function student()
     {
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
+    }
+
+    public function lesson()
+    {
+        return $this->belongsTo(Lesson::class);
     }
 }
