@@ -14,7 +14,6 @@
                     </p>
                 </div>
             </details>
-
         @endforeach
-    </div>
+    </summary>
 </div>
