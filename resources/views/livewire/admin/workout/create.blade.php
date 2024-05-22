@@ -6,6 +6,7 @@
                     <span class="label-text">{{ __('Lesson') }}</span>
                 </div>
                 <select wire:model="lesson_id" placeholder="{{ __('Lesson') }}" class="select select-bordered">
+                    <option></option>
                     @foreach($lessons as $lesson)
                     <option value="{{ $lesson->id }}">{{ $lesson->title }}</option>
                     @endforeach
