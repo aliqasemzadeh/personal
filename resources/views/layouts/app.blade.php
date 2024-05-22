@@ -113,8 +113,8 @@
                 <details>
                     <summary>دانشجویان</summary>
                     <ul>
-                        <li><a>درس ها</a></li>
-                        <li><a>تمرین ها</a></li>
+                        <li><a href="{{ route('student.lesson.index') }}">درس ها</a></li>
+                        <li><a href="{{ route('student.workout.index') }}">تمرین ها</a></li>
                     </ul>
                 </details>
             </li>

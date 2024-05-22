@@ -25,3 +25,7 @@ Route::get('/admin/workout/index', \App\Livewire\Admin\Workout\Index::class)->na
 Route::get('/admin/workout/create', \App\Livewire\Admin\Workout\Create::class)->name('admin.workout.create');
 Route::get('/admin/workout/edit/{workout_id}', \App\Livewire\Admin\Workout\Edit::class)->name('admin.workout.edit');
 Route::get('/admin/workout/student/{workout_id}', \App\Livewire\Admin\Workout\Student::class)->name('admin.workout.student');
+
+
+Route::get('/student/lesson/index', \App\Livewire\Student\Lesson\Index::class)->name('student.lesson.index');
+Route::get('/student/workout/index', \App\Livewire\Student\Workout\Index::class)->name('student.workout.index');
