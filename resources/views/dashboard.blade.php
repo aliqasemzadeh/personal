@@ -1,14 +1,10 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
-                <x-welcome />
+    <div class="hero min-h-screen bg-base-200">
+        <div class="hero-content text-center">
+            <div class="max-w-md">
+                <p class="py-6">{{ __('First Update Information then full workouts') }}</p>
+                <a href="{{ route('profile.show') }}" class="btn btn-primary">{{ __('Update Profile') }}</a>
+                <a href="{{ route('student.lesson.index') }}" class="btn btn-accent">{{ __('Lessons') }}</a>
             </div>
         </div>
     </div>

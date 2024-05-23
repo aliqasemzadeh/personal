@@ -26,6 +26,10 @@ class UpdateStudentInformation extends Component
             'student_id' => ['numeric', 'required', Rule::unique('users')->ignore(auth()->user()->id)],
         ]);
 
+        auth()->user()->github = $this->github;
+        auth()->user()->student_id = $this->student_id;
+        auth()->user()->save();
+
         $this->dispatch('saved');
 
         $this->dispatch('refresh-navigation-menu');
