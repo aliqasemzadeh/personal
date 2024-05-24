@@ -125,6 +125,7 @@
         <ul class="menu p-4 w-80 min-h-full bg-base-200">
             <li><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
             @auth
+                <li><a href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a></li>
             <li>
                 <details>
                     <summary>{{ __('Student') }}</summary>
