@@ -15,7 +15,7 @@
                 @foreach($workouts as $workout)
                     <!-- row 1 -->
                     <tr :key="$workout->id">
-                        <td>{{ $workout->description }}</td>
+                        <td>{!! nl2br($workout->description) !!}</td>
                         <td>{{ $workout->lesson->title }}</td>
                         <th>
                             <a href="{{ route('admin.workout.edit', [$workout->id]) }}" class="btn btn-primary btn-xs">{{ __('Edit') }}</a>

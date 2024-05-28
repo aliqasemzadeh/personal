@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-        {{ $workout->description }}
+        {!! nl2br($workout->description) !!}
         <label class="form-control">
             <div class="label">
                 <span class="label-text">{{ __('GitHub Address') }}</span>
