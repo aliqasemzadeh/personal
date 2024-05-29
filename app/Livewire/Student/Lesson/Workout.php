@@ -21,6 +21,7 @@ class Workout extends Component
             'lesson_id' => $workout->lesson_id,
             'student_id' => auth()->user()->id
         ]);
+        $this->url = $this->studentWorkout->url;
     }
 
     public function submit()
@@ -32,8 +33,7 @@ class Workout extends Component
         $this->studentWorkout->url = $this->url;
         $this->studentWorkout->save();
 
-        dd($this->url);
-
+        $this->dispatch('saved');
     }
     public function render()
     {
