@@ -8,11 +8,9 @@
             <input type="text" wire:model="url" placeholder="{{ __('Address') }}" class="input input-bordered" />
             @error('url') <span class="text-red-700">{{ $message }}</span> @enderror
         </label>
-        <x-slot name="actions">
             <x-action-message class="me-3" on="saved">
                 {{ __('Saved.') }}
             </x-action-message>
             <button wire:click="submit" class="btn btn-primary">{{ __('Submit') }}</button>
-        </x-slot>
     </div>
 </div>
