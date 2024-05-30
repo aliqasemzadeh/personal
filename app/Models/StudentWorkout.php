@@ -9,4 +9,8 @@ class StudentWorkout extends Model
 {
     use HasFactory;
     protected $fillable = ['student_id', 'workout_id', 'lesson_id'];
+    public function workout()
+    {
+        return $this->belongsTo(LessonWorkout::class);
+    }
 }

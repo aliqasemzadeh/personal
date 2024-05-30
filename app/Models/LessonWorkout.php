@@ -13,4 +13,5 @@ class LessonWorkout extends Model
     {
         return $this->belongsTo(Lesson::class);
     }
+
 }
