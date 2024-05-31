@@ -18,6 +18,18 @@ class Workout extends Component
         $this->lesson = Lesson::findOrFail($lesson_id);
     }
 
+    public function accept($workout_id)
+    {
+        $studentWorkout = StudentWorkout::findOrFail($workout_id);
+        $this->dispatch('check-workout');
+    }
+
+    public function reject($workout_id)
+    {
+        $studentWorkout = StudentWorkout::findOrFail($workout_id);
+        $this->dispatch('check-workout');
+    }
+
     #[On('check-workout')]
     public function render()
     {

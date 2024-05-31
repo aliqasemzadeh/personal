@@ -16,6 +16,9 @@
                     <!-- row 1 -->
                     <tr :key="$workout->id">
                         <td>
+
+                        </td>
+                        <td>
                             <a target="_blank" class="btn" href="{!! nl2br($workout->url) !!}">
                                 {{ __('View') }}
                             </a>
