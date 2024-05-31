@@ -5,6 +5,7 @@
                 <!-- head -->
                 <thead>
                 <tr>
+                    <th>{{ __('ID') }}</th>
                     <th>{{ __('Name') }}</th>
                     <th>{{ __('Email') }}</th>
                     <th>{{ __('Student ID') }}</th>
@@ -16,6 +17,7 @@
                 @foreach($students as $user)
                     <!-- row 1 -->
                     <tr :key="$user->id">
+                        <td>{{ $user->id }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->student_id }}</td>
@@ -29,6 +31,7 @@
                 <!-- foot -->
                 <tfoot>
                 <tr>
+                    <th>{{ __('ID') }}</th>
                     <th>{{ __('Name') }}</th>
                     <th>{{ __('Email') }}</th>
                     <th>{{ __('Student ID') }}</th>
