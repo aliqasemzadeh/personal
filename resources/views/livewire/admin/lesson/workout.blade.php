@@ -16,8 +16,8 @@
                     <!-- row 1 -->
                     <tr :key="$workout->id">
                         <td>
-                            <button class="btn btn-error btn-xs" wire:click="reject({{$workout->id}})" wire:confirm="{{ __('Are you sure?') }}">{{ __('Reject') }}</button>
-                            <button class="btn btn-success btn-xs" wire:click="accept({{$workout->id}})" wire:confirm="{{ __('Are you sure?') }}">{{ __('Accept') }}</button>
+                            <button class="btn btn-error" wire:click="reject({{$workout->id}})" wire:confirm="{{ __('Are you sure?') }}">{{ __('Reject') }}</button>
+                            <button class="btn btn-success" wire:click="accept({{$workout->id}})" wire:confirm="{{ __('Are you sure?') }}">{{ __('Accept') }}</button>
                         </td>
                         <td>
                             <a target="_blank" class="btn" href="{!! nl2br($workout->url) !!}">
