@@ -33,7 +33,7 @@ class Workout extends Component
     #[On('check-workout')]
     public function render()
     {
-        $workouts = StudentWorkout::with(['workout'])->where('lesson_id', $this->lesson_id)->where('url', '!=', 'NULL')->get();
+        $workouts = StudentWorkout::with(['workout'])->where('lesson_id', $this->lesson_id)->where('url', '!=', 'NULL')->where('check',0)->get();
         return view('livewire.admin.lesson.workout', compact('workouts'));
     }
 }
