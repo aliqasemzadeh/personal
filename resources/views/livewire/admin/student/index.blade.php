@@ -13,7 +13,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($users as $user)
+                @foreach($students as $user)
                     <!-- row 1 -->
                     <tr :key="$user->id">
                         <td>{{ $user->name }}</td>
