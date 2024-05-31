@@ -1,5 +1,5 @@
 <div>
-    <h3>{{ $workout->title }}</h3>
+    <h3>{!! $workout->description !!}</h3>
     @foreach($studentWorkouts as $studentWorkout)«
         {{ $studentWorkout->url }}
     @endforeach
