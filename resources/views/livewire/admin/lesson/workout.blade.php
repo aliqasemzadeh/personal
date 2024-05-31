@@ -1,26 +1,27 @@
 <div class="card">
     <div class="card-body">
-        <h2 class="card-title">{!! $workout->description !!}</h2>
+        <h2 class="card-title"></h2>
         <div class="overflow-x-auto">
             <table class="table">
                 <!-- head -->
                 <thead>
                 <tr>
                     <th>{{ __('URL') }}</th>
-                    <th></th>
+                    <th>{{ __('Workout') }}</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($studentWorkouts as $studentWorkout)
+
+                @foreach($workouts as $workout)
                     <!-- row 1 -->
                     <tr :key="$workout->id">
                         <td>
-                            <a target="_blank" class="btn" href="{!! nl2br($studentWorkout->url) !!}">
+                            <a target="_blank" class="btn" href="{!! nl2br($workout->url) !!}">
                                 {{ __('View') }}
                             </a>
                         </td>
                         <th>
-
+                            {!! nl2br($workout->workout->description) !!}
                         </th>
                     </tr>
                 @endforeach
