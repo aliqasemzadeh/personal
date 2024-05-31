@@ -21,7 +21,7 @@
     <input id="sidebar-drawer" type="checkbox" class="drawer-toggle"/>
     <div class="drawer-content flex flex-col">
         <!-- Navbar -->
-        <div class="w-full navbar bg-base-300 sticky top-0">
+        <div class="w-full navbar bg-base-300">
             <div class="flex-none">
                 <label for="sidebar-drawer" aria-label="open sidebar" class="btn btn-square btn-ghost">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
