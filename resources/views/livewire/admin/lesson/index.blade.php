@@ -19,6 +19,7 @@
                         <a href="{{ route('admin.lesson.edit', [$lesson->id]) }}" class="btn btn-primary btn-xs">{{ __('Edit') }}</a>
                         <button class="btn btn-error btn-xs" wire:click="delete({{$lesson->id}})" wire:confirm="{{ __('Are you sure?') }}">{{ __('Delete') }}</button>
                         <a href="{{ route('admin.lesson.student', [$lesson->id]) }}" class="btn btn-secondary btn-xs">{{ __('Students') }}</a>
+                        <a href="{{ route('admin.lesson.workout', [$lesson->id]) }}" class="btn btn-accent btn-xs">{{ __('Workouts') }}</a>
                     </th>
                 </tr>
                 @endforeach
