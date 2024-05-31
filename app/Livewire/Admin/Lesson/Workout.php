@@ -21,12 +21,16 @@ class Workout extends Component
     public function accept($workout_id)
     {
         $studentWorkout = StudentWorkout::findOrFail($workout_id);
+        $studentWorkout->check = 1;
+        $studentWorkout->save();
         $this->dispatch('check-workout');
     }
 
     public function reject($workout_id)
     {
         $studentWorkout = StudentWorkout::findOrFail($workout_id);
+        $studentWorkout->check = -1;
+        $studentWorkout->save();
         $this->dispatch('check-workout');
     }
 
