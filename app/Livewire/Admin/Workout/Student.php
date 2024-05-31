@@ -17,7 +17,7 @@ class Student extends Component
 
     public function render()
     {
-
+        dd($this->workout);
         $studentWorkouts = StudentWorkout::where('workout_id', $this->workout->id)->get();
         return view('livewire.admin.workout.student', compact('studentWorkouts'));
     }
