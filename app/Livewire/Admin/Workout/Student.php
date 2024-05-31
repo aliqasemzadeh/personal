@@ -8,7 +8,6 @@ use Livewire\Component;
 
 class Student extends Component
 {
-    public $lesson_id;
     public LessonWorkout $workout;
 
     public function mount(LessonWorkout $workout)
