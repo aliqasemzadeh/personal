@@ -12,7 +12,6 @@
                 </tr>
                 </thead>
                 <tbody>
-
                 @foreach($workouts as $workout)
                     <!-- row 1 -->
                     <tr :key="$workout->id">
