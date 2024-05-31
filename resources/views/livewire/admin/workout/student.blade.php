@@ -1,3 +1,5 @@
 <div>
-    {{-- The best athlete wants his opponent at his best. --}}
+    @foreach($studentWorkouts as $studentWorkout)
+        {{ $studentWorkout->url }}
+    @endforeach
 </div>

@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="hero min-h-screen bg-base-200">
         <div class="hero-content flex-col lg:flex-row">
-            <img src="https://avatars.githubusercontent.com/u/26847446?v=4" class="w-16 md:w-32 lg:w-48" />
+            <img src="https://avatars.githubusercontent.com/u/26847446?v=4" class="w-16 md:w-32 lg:w-48 rounded-full mx-auto" />
             <div>
                 <h1 class="text-5xl font-bold">{{ __('Ali Qasemzadeh') }}</h1>
                 <p class="py-6">{{ __('My name is Ali Qasemzadeh, Master of IT') }}</p>
