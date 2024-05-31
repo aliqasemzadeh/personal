@@ -6,6 +6,7 @@
                 <!-- head -->
                 <thead>
                 <tr>
+                    <th>{{ __('Action') }}</th>
                     <th>{{ __('URL') }}</th>
                     <th>{{ __('Workout') }}</th>
                 </tr>
@@ -29,6 +30,7 @@
                 <!-- foot -->
                 <tfoot>
                 <tr>
+                    <th>{{ __('Action') }}</th>
                     <th>{{ __('URL') }}</th>
                     <th></th>
                 </tr>
