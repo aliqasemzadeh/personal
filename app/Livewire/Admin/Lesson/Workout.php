@@ -22,7 +22,9 @@ class Workout extends Component
     {
         $studentWorkout = StudentWorkout::findOrFail($workout_id);
         $studentWorkout->check = 1;
-        $studentWorkout->checker_user_id = auth()->user()->id;
+        if(!$studentWorkout->checker_user_id)  {
+            $studentWorkout->checker_user_id = auth()->user()->id;
+        }
         $studentWorkout->save();
         $this->dispatch('check-workout');
     }
@@ -31,7 +33,9 @@ class Workout extends Component
     {
         $studentWorkout = StudentWorkout::findOrFail($workout_id);
         $studentWorkout->check = -1;
-        $studentWorkout->checker_user_id = auth()->user()->id;
+        if(!$studentWorkout->checker_user_id)  {
+            $studentWorkout->checker_user_id = auth()->user()->id;
+        }
         $studentWorkout->save();
         $this->dispatch('check-workout');
     }
