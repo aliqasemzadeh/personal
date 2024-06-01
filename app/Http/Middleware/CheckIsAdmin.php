@@ -15,6 +15,10 @@ class CheckIsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if (!in_array(auth()->user()->id, config('personal.admins')))
+        {
+            return redirect()->route('profile.show');
+        }
         return $next($request);
     }
 }
