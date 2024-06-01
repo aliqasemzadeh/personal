@@ -142,6 +142,7 @@
                         <li><a href="{{ route('admin.student.index') }}">{{ __('Students') }}</a></li>
                         <li><a href="{{ route('admin.lesson.index') }}">{{ __('Lessons') }}</a></li>
                         <li><a href="{{ route('admin.workout.index') }}">{{ __('Workouts') }}</a></li>
+                        <li><a href="{{ route('admin.lesson.checker') }}">{{ __('Checker') }}</a></li>
                     </ul>
                 </details>
             </li>
