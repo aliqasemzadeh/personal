@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class StudentCheck
@@ -15,14 +16,19 @@ class StudentCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!auth()->user()->student_id)
-        {
-            return redirect()->route('profile.show');
+        if(Auth::check()) {
+            if(!auth()->user()->student_id)
+            {
+                return redirect()->route('profile.show');
+            }
+            if(!auth()->user()->github)
+            {
+                return redirect()->route('profile.show');
+            }
+        } else {
+            return redirect()->route('login');
         }
-        if(!auth()->user()->github)
-        {
-            return redirect()->route('profile.show');
-        }
+
         return $next($request);
     }
 }
