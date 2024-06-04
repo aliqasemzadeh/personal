@@ -31,6 +31,7 @@ class Workout extends Component
         ]);
 
         $this->studentWorkout->url = $this->url;
+        $this->studentWorkout->check = 0;
         $this->studentWorkout->save();
 
         $this->dispatch('saved');
