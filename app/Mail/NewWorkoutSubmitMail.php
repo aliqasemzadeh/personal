@@ -39,7 +39,7 @@ class NewWorkoutSubmitMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.new-workout-mail',
+            view: 'emails.new-workout-submit',
             with: [
                 'title' => $this->title,
             ],
@@ -54,5 +54,15 @@ class NewWorkoutSubmitMail extends Mailable
     public function attachments(): array
     {
         return [];
+    }
+
+    /**
+     * Build the message.
+     *
+     * @return $this
+     */
+    public function build()
+    {
+        return $this->markdown('emails.new-workout-submit'); // -> pointing to views/mail/new-message.blade.php containing above message
     }
 }
