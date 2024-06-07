@@ -36,7 +36,7 @@ class Workout extends Component
         $this->studentWorkout->check = 0;
         $this->studentWorkout->save();
 
-        Mail::to(auth()->user())->send(new NewWorkoutSubmitMail($this->workout->title));
+        //Mail::to(auth()->user())->send(new NewWorkoutSubmitMail($this->workout->title));
 
         $this->dispatch('saved');
     }
