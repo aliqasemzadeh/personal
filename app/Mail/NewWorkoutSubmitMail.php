@@ -11,14 +11,16 @@ use Illuminate\Queue\SerializesModels;
 
 class NewWorkoutSubmitMail extends Mailable
 {
+    public $title;
+
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($title)
     {
-        //
+        $this->title = $title;
     }
 
     /**
