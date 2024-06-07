@@ -27,7 +27,7 @@ class NewWorkoutSubmitMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Workout Submit Mail',
+            subject: __('New Workout Mail'),
         );
     }
 
@@ -37,7 +37,7 @@ class NewWorkoutSubmitMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'view.email.new-workout-mail',
         );
     }
 
