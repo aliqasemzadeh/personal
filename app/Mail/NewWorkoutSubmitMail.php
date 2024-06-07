@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\LessonWorkout;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -11,16 +12,14 @@ use Illuminate\Queue\SerializesModels;
 
 class NewWorkoutSubmitMail extends Mailable
 {
-    public $title;
 
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($title)
+    public function __construct(public LessonWorkout $workout)
     {
-        $this->title = $title;
     }
 
     /**
@@ -29,7 +28,7 @@ class NewWorkoutSubmitMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: __('New Workout Mail'),
+            subject: __('New Workout Mail') . ": " . $this->workout->title,
         );
     }
 
@@ -41,7 +40,7 @@ class NewWorkoutSubmitMail extends Mailable
         return new Content(
             view: 'emails.new-workout-submit',
             with: [
-                'title' => $this->title,
+                'title' => $this->workout->title,
             ],
         );
     }
