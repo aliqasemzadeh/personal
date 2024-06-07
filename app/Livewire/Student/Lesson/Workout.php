@@ -2,7 +2,9 @@
 
 namespace App\Livewire\Student\Lesson;
 
+use App\Mail\NewWorkoutSubmitMail;
 use App\Models\StudentWorkout;
+use Illuminate\Support\Facades\Mail;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use App\Models\LessonWorkout;
@@ -33,6 +35,8 @@ class Workout extends Component
         $this->studentWorkout->url = $this->url;
         $this->studentWorkout->check = 0;
         $this->studentWorkout->save();
+
+        Mail::to(auth()->user())->send(new NewWorkoutSubmitMail($this->workout->title));
 
         $this->dispatch('saved');
     }
