@@ -40,6 +40,9 @@ class NewWorkoutSubmitMail extends Mailable
     {
         return new Content(
             view: 'view.email.new-workout-mail',
+            with: [
+                'title' => $this->title,
+            ],
         );
     }
 
