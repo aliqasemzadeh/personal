@@ -28,7 +28,7 @@ class NewWorkoutSubmitMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: __('New Workout Mail') . ": " . $this->workout->title,
+            subject: __('New Workout Mail') . ": " . date("Y-m-d H:i:s"),
         );
     }
 
