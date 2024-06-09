@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\LessonWorkout;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -16,7 +17,7 @@ class CheckWorkoutMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(public LessonWorkout $workout)
     {
         //
     }
@@ -27,7 +28,7 @@ class CheckWorkoutMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: __('Check Workout Mail'),
+            subject: __('Check Workout Mail'). ":".date("Y-m-d H:i:s"),
         );
     }
 
@@ -37,7 +38,10 @@ class CheckWorkoutMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.check-workout',
+            with: [
+                'title' => $this->workout->description,
+            ],
         );
     }
 
@@ -49,5 +53,16 @@ class CheckWorkoutMail extends Mailable
     public function attachments(): array
     {
         return [];
+    }
+
+
+    /**
+     * Build the message.
+     *
+     * @return $this
+     */
+    public function build()
+    {
+        return $this->markdown('emails.check-workout'); // -> pointing to views/mail/new-message.blade.php containing above message
     }
 }

@@ -2,8 +2,12 @@
 
 namespace App\Livewire\Admin\Lesson;
 
+use App\Mail\CheckWorkoutMail;
+use App\Mail\NewWorkoutSubmitMail;
 use App\Models\Lesson;
 use App\Models\StudentWorkout;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
@@ -24,6 +28,8 @@ class Workout extends Component
         $studentWorkout->check = 1;
         if(!$studentWorkout->checker_user_id)  {
             $studentWorkout->checker_user_id = auth()->user()->id;
+            Mail::to(User::findOrFail($studentWorkout->student_id))->send(new CheckWorkoutMail($studentWorkout));
+
         }
         $studentWorkout->save();
         $this->dispatch('check-workout');
@@ -35,6 +41,8 @@ class Workout extends Component
         $studentWorkout->check = -1;
         if(!$studentWorkout->checker_user_id)  {
             $studentWorkout->checker_user_id = auth()->user()->id;
+            Mail::to(User::findOrFail($studentWorkout->student_id))->send(new CheckWorkoutMail($studentWorkout));
+
         }
         $studentWorkout->save();
         $this->dispatch('check-workout');

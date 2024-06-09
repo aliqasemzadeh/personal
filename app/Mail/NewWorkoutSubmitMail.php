@@ -3,6 +3,7 @@
 namespace App\Mail;
 
 use App\Models\LessonWorkout;
+use App\Models\StudentWorkout;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -18,8 +19,9 @@ class NewWorkoutSubmitMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public LessonWorkout $workout)
+    public function __construct(public StudentWorkout $studentWorkout)
     {
+        //
     }
 
     /**
@@ -40,7 +42,7 @@ class NewWorkoutSubmitMail extends Mailable
         return new Content(
             view: 'emails.new-workout-submit',
             with: [
-                'title' => $this->workout->title,
+                'title' => $this->studentWorkout->workout->description,
             ],
         );
     }
