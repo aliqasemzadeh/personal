@@ -19,7 +19,7 @@ class NewWorkoutSubmitMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public StudentWorkout $studentWorkout)
+    public function __construct(public LessonWorkout $workout)
     {
         //
     }
@@ -42,7 +42,7 @@ class NewWorkoutSubmitMail extends Mailable
         return new Content(
             view: 'emails.new-workout-submit',
             with: [
-                'title' => $this->studentWorkout->workout->description,
+                'title' => $this->workout->description,
             ],
         );
     }
