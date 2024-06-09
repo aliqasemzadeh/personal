@@ -5,7 +5,7 @@
     @if($check == 1)
         {{ __('You workout is accepted') }}
     @endif
-    @if($check == 1)
+    @if($check == -1)
         {{ __('You workout is rejected') }}
     @endif
 

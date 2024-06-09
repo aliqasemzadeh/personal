@@ -3,6 +3,7 @@
 namespace App\Mail;
 
 use App\Models\LessonWorkout;
+use App\Models\StudentWorkout;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -17,7 +18,7 @@ class CheckWorkoutMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public LessonWorkout $workout)
+    public function __construct(public StudentWorkout $workout)
     {
         //
     }
@@ -40,7 +41,8 @@ class CheckWorkoutMail extends Mailable
         return new Content(
             view: 'emails.check-workout',
             with: [
-                'title' => $this->workout->description,
+                'title' => $this->workout->workout->description,
+                'check' =>  $this->workout->check
             ],
         );
     }
