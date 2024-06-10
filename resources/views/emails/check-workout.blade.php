@@ -10,4 +10,10 @@
     @endif
 
 
+    @component('mail::button', ['url' => route('student.lesson.index')])
+        {{ __('Check Lessons') }}
+    @endcomponent
+
+
+
 @endcomponent
