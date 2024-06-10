@@ -43,6 +43,7 @@ class NewWorkoutSubmitMail extends Mailable
             view: 'emails.new-workout-submit',
             with: [
                 'title' => $this->workout->description,
+                'url' => route('admin.lesson.workout',[$this->workout->lesson_id]),
             ],
         );
     }

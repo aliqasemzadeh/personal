@@ -1,6 +1,9 @@
 @component('mail::message')
+    {{ __('New Workout Submit Successfully.') }}
+
     {{ $title }}
 
-
-    {{ __('New Workout Submit Successfully.') }}
+    @component('mail::button', ['url' => route('student.lesson.index')])
+        {{ __('Check Workout') }}
+    @endcomponent
 @endcomponent
