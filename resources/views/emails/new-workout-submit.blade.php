@@ -3,7 +3,7 @@
 
     {{ $title }}
 
-    @component('mail::button', ['url' => route('student.lesson.index')])
+    @component('mail::button', ['url' => $url])
         {{ __('Check Workout') }}
     @endcomponent
 @endcomponent
