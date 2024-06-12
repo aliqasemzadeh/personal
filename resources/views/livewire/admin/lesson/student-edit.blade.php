@@ -33,7 +33,7 @@
         </div>
         <input type="text" wire:model="conferences" placeholder="{{ __('Conferences') }}" class="input input-bordered w-full max-w-xs" />
     </label>
-    <button class="btn btn-primary">{{ __('Submit') }}</button>
+    <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
     <x-action-message class="me-3" on="saved">
         {{ __('Saved.') }}
     </x-action-message>
