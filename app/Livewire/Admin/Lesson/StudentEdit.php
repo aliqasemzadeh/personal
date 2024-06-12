@@ -42,6 +42,8 @@ class StudentEdit extends Component
         $this->student->conferences = $this->conferences;
         $this->student->save();
 
+        $this->dispatch('saved');
+
     }
 
     public function render()
