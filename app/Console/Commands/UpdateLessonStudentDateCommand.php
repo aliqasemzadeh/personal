@@ -43,6 +43,8 @@ class UpdateLessonStudentDateCommand extends Command
                     $student->workout_total = $workout_total;
                     $student->workout_right = $workout_right;
                     $student->workout_wrong = $workout_wrong;
+                    $student->workout_point = (($workout_right * 3) / $workout_total) + ($workout_wrong / ($workout_total * 3));
+
                     $student->save();
                 }
 
