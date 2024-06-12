@@ -4,9 +4,10 @@
 
             <ul class="list-disc list-inside space-y-2">
                 @foreach($students as $student)
-                <li class="text-blue-500">{{ $student->student_id }}
-
-
+                <li class="text-blue-500" wire:key="{{ $student->student_id }}">
+                    {{ $student->student_id }}
+                    <br />
+                        <livewire:admin.lesson.student-edit :student="$student" :key="$student->student_id" />
                 </li>
                 @endforeach
             </ul>
