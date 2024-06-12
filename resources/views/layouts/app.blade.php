@@ -131,6 +131,7 @@
                     <summary>{{ __('Student') }}</summary>
                     <ul>
                         <li><a href="{{ route('student.lesson.index') }}">{{ __('Lessons') }}</a></li>
+                        <li><a href="{{ route('student.lesson.top-student') }}">{{ __('Ranking') }}</a></li>
                     </ul>
                 </details>
             </li>
