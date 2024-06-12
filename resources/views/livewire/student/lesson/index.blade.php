@@ -19,7 +19,7 @@
                         </div>
                     @endif
 
-                    @if($grade >= 3 && $grade <5)
+                    @if($grade >= 5)
                         <div class="badge badge-success badge-lg">
                             {{ round($grade  , 2, PHP_ROUND_HALF_DOWN) }}
                         </div>
