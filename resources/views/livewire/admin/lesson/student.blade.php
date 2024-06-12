@@ -4,7 +4,10 @@
 
             <ul class="list-disc list-inside space-y-2">
                 @foreach($students as $student)
-                <li class="text-blue-500">{{ $student->student_id }}</li>
+                <li class="text-blue-500">{{ $student->student_id }}
+
+
+                </li>
                 @endforeach
             </ul>
             <label class="form-control">
