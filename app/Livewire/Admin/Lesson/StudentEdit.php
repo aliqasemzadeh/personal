@@ -19,9 +19,9 @@ class StudentEdit extends Component
         $this->student = $student;
         $this->midterm = $student->midterm;
         $this->final = $student->final;
-        $this->absence = $this->absence;
-        $this->plus = $this->plus;
-        $this->conferences = $this->conferences;
+        $this->absence = $student->absence;
+        $this->plus = $student->plus;
+        $this->conferences = $student->conferences;
 
     }
 
