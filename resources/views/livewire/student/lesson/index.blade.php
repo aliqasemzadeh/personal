@@ -3,7 +3,30 @@
         @foreach($lessons as $lesson)
             <details class="collapse bg-base-200">
                 <summary class="collapse-title text-xl font-medium">
+                    @php
+                        $grade = $lesson->workout_point + $lesson->conferences + $lesson->plus * 0.25 + $lesson->absence * -0.5 + ($lesson->midterm / 4) + (($lesson->final* 3) / 4);
+                    @endphp
+
+                    @if($grade < 3)
+                    <div class="badge badge-error badge-lg">
+                        {{ round($grade  , 2, PHP_ROUND_HALF_DOWN) }}
+                    </div>
+                    @endif
+
+                    @if($grade >= 3 && $grade <5)
+                        <div class="badge badge-warning badge-lg">
+                            {{ round($grade  , 2, PHP_ROUND_HALF_DOWN) }}
+                        </div>
+                    @endif
+
+                    @if($grade >= 3 && $grade <5)
+                        <div class="badge badge-success badge-lg">
+                            {{ round($grade  , 2, PHP_ROUND_HALF_DOWN) }}
+                        </div>
+                    @endif
+
                     {{ $lesson->lesson->title }}
+
                 </summary>
                 <div class="collapse-content">
                     <p>
