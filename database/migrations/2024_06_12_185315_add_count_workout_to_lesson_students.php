@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('lesson_students', function (Blueprint $table) {
-            //
+            $table->double('workout_total')->default(0);
+            $table->double('workout_right')->default(0);
+            $table->double('workout_wrong')->default(0);
+            $table->double('workout_point')->default(0);
+            $table->double('conferences')->default(0);
         });
     }
 
@@ -22,11 +26,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('lesson_students', function (Blueprint $table) {
-            $table->double('workout_total')->default(0);
-            $table->double('workout_right')->default(0);
-            $table->double('workout_wrong')->default(0);
-            $table->double('workout_point')->default(0);
-            $table->double('conferences')->default(0);
+
         });
     }
 };

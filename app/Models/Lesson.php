@@ -14,4 +14,14 @@ class Lesson extends Model
     {
         return $this->hasMany(LessonWorkout::class);
     }
+    public function students()
+    {
+        return $this->hasMany(LessonStudent::class);
+    }
+
+    public function studentWorkouts()
+    {
+        return $this->hasMany(StudentWorkout::class);
+    }
+
 }
