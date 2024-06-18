@@ -3,6 +3,7 @@
 
         <ul class="list-disc list-inside space-y-2">
             @foreach($students as $student)
+                {{ $student->workout_point }}
                 <li class="text-blue-500">
                     @php
                         $grade = $student->workout_point + $student->conferences + $student->plus * 0.25 + $student->absence * -0.5 + ($student->midterm / 4) + (($student->final* 3) / 4);
