@@ -44,7 +44,13 @@ class UpdateLessonStudentDateCommand extends Command
                     $student->workout_right = $workout_right;
                     $student->workout_wrong = $workout_wrong;
                     $student->workout_point = (($workout_right * 3) / $workout_total) + ($workout_wrong / ($workout_total * 3));
-                    $grade = $student->workout_point + $student->conferences + $student->plus * 0.25 + $student->absence * -0.5 + ($student->midterm / 4) + (($student->final* 3) / 4);
+
+                    if($lesson->id == 3) {
+                        $grade = $student->workout_point + $student->conferences + $student->plus * 0.25 + $student->absence * -0.5 + ($student->midterm / 4) + (($student->final* 4) / 4);
+                    } else {
+                        $grade = $student->workout_point + $student->conferences + $student->plus * 0.25 + $student->absence * -0.5 + ($student->midterm / 4) + (($student->final* 3) / 4);
+                    }
+
                     $student->total_point = $grade;
                     $student->save();
                 }

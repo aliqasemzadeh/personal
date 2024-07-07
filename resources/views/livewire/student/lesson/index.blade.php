@@ -4,7 +4,7 @@
             <details class="collapse bg-base-200">
                 <summary class="collapse-title text-xl font-medium">
                     @php
-                        $grade = $lesson->workout_point + $lesson->conferences + $lesson->plus * 0.25 + $lesson->absence * -0.5 + ($lesson->midterm / 4) + (($lesson->final* 3) / 4);
+                        $grade = $lesson->total_point;
                     @endphp
 
                     @if($grade < 3)

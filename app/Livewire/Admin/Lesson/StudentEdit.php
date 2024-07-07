@@ -40,6 +40,13 @@ class StudentEdit extends Component
         $this->student->absence = $this->absence;
         $this->student->plus = $this->plus;
         $this->student->conferences = $this->conferences;
+        if($this->student->lesson_id == 3) {
+            $grade = $this->student->workout_point + $this->student->conferences + $this->student->plus * 0.25 + $this->student->absence * -0.5 + ($this->student->midterm / 4) + (($this->student->final* 4) / 4);
+        } else {
+            $grade = $this->student->workout_point + $this->student->conferences + $this->student->plus * 0.25 + $this->student->absence * -0.5 + ($this->student->midterm / 4) + (($this->student->final* 3) / 4);
+        }
+
+        $this->student->total_point = $grade;
         $this->student->save();
 
         $this->dispatch('saved');
