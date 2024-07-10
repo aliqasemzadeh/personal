@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'admins' => [],
+    'admins' => [1],
     'mods' => [2],
 ];
