@@ -18,7 +18,7 @@ class Workouts extends ModalComponent
 
     public static function modalMaxWidth(): string
     {
-        return 'xl';
+        return '3xl';
     }
 
     public function render()

@@ -1,6 +1,7 @@
-<div>
     <div class="card">
         <summary class="card-body">
+
+            {{ $user->email }}
             @foreach($lessons as $lesson)
                 <details class="collapse bg-base-200">
                     <summary class="collapse-title text-xl font-medium">
@@ -26,8 +27,19 @@
                             </div>
                         @endif
 
+
+
                         {{ $lesson->lesson->title }}
 
+
+                        @php
+                            $workout_total = \App\Models\LessonWorkout::where('lesson_id', $lesson->lesson->id)->count();
+                            $workout_right =\App\Models\StudentWorkout::where('lesson_id', $lesson->lesson->id)->where('student_id', $user->id)->where('check', 1)->count();
+                            $workout_wrong = \App\Models\StudentWorkout::where('lesson_id', $lesson->lesson->id)->where('student_id', $user->id)->where('check', -1)->count();
+                        @endphp
+
+
+                        - {{ __('Right') }}:{{ $workout_right }}+{{ __('Wrong') }}:{{ $workout_wrong }}/{{ __('Total') }}:{{ $workout_total }}
                     </summary>
                     <div class="collapse-content">
                         <p>
@@ -41,5 +53,3 @@
             @endforeach
         </summary>
     </div>
-
-</div>
