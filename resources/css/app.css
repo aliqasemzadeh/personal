@@ -13,3 +13,12 @@
         font-family: Vazirmatn, Tahoma, system-ui, sans-serif;
     }
 }
+@layer components {
+    .bg-secondary-200 { /* Define your class behavior here */ }
+    .bg-secondary-400 { /* Define your class behavior here */ }
+    .bg-secondary-500 { /* Define your class behavior here */ }
+    .bg-secondary-600 { /* Define your class behavior here */ }
+    .bg-secondary-700 { /* Define your class behavior here */ }
+    .bg-secondary-800 { /* Define your class behavior here */ }
+    .bg-secondary-900 { /* Define your class behavior here */ }
+}
