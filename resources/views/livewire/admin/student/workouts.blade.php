@@ -1,4 +1,5 @@
-    <div class="card">
+<div>
+    <x-card title="{{ __('Workouts') }}">
         <summary class="card-body">
 
             {{ $user->email }}
@@ -39,17 +40,19 @@
                         @endphp
 
 
-                        - {{ __('Right') }}:{{ $workout_right }}+{{ __('Wrong') }}:{{ $workout_wrong }}/{{ __('Total') }}:{{ $workout_total }}
+                        - {{ __('Right') }}:{{ $workout_right }}+{{ __('Wrong') }}:{{ $workout_wrong }}
+                        /{{ __('Total') }}:{{ $workout_total }}
                     </summary>
                     <div class="collapse-content">
                         <p>
                             @foreach($lesson->lesson->workouts as $workout)
-                                <livewire:student.lesson.workout :$workout />
-                                <x-section-border />
+                                <livewire:student.lesson.workout :$workout/>
+                                <x-section-border/>
                             @endforeach
                         </p>
                     </div>
                 </details>
             @endforeach
         </summary>
-    </div>
+    </x-card>
+</div>
