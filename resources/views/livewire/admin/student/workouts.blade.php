@@ -1,5 +1,10 @@
 <div>
     <x-card title="{{ __('Workouts') }}">
+
+        <x-input
+            label="Name"
+            placeholder="your name"
+        />
         <x-slot name="action">
             <x-mini-button wire:click="$dispatch('closeModal')" icon="x-mark" icon-size="md" primary flat xs />
         </x-slot>

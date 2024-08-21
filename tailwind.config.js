@@ -2,6 +2,8 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 import daisyui from "daisyui";
+const colors = require('tailwindcss/colors');
+
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -23,13 +25,18 @@ export default {
         "./vendor/wireui/wireui/src/Components/**/*.php",
         './vendor/wire-elements/modal/resources/views/*.blade.php',
     ],
+
     theme: {
         extend: {
+            colors: {
+                "pg-primary": colors.gray,
+            },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
         },
     },
+
 
     plugins: [forms, typography, daisyui],
 };
