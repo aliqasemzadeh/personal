@@ -24,10 +24,11 @@ class StudentCreate extends Component
             'lesson_id'=>'required',
         ]);
 
-        new LessonStudent([
+        LessonStudent::createOrFirst([
             'lesson_id' => $this->lesson_id,
             'student_id' => $this->student_id,
         ]);
+
         $this->notification()->send([
             'icon' => 'success',
             'title' => __('Created Successfully'),
