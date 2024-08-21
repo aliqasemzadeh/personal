@@ -22,7 +22,7 @@
                     <input type="file" wire:model="file" class="file-input file-input-bordered" />
                     @error('file') <span class="text-red-700">{{ $message }}</span> @enderror
             </label>
-            <button class="btn btn-primary" wire:click="import">{{ __('Upload') }}</button>
+            <button type="submit" class="btn btn-primary" wire:click="import">{{ __('Upload') }}</button>
         </form>
     </div>
 </div>
