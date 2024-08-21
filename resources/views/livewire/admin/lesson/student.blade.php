@@ -6,11 +6,6 @@
                 {{ $student->workout_point }}
                 <li class="text-blue-500">
                     {{ $student->student_id }}
-                    @if(auth()->user()->id == 1)
-                    <br />
-                    <livewire:admin.lesson.student-edit :$student :key="$student->student_id" />
-                    <x-section-border />
-                    @endif
                 </li>
             @endforeach
         </ul>
@@ -24,6 +19,8 @@
             </label>
             <button type="submit" class="btn btn-primary" wire:click="import">{{ __('Upload') }}</button>
         </form>
+
+        <livewire:admin.lesson.student-create :$lesson_id  />
     </div>
 </div>
 

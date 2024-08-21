@@ -18,6 +18,8 @@
     @livewireStyles
 </head>
 <body class="font-sans antialiased">
+<x-dialog />
+<x-notifications />
 <div class="drawer">
     <input id="sidebar-drawer" type="checkbox" class="drawer-toggle"/>
     <div class="drawer-content flex flex-col">
