@@ -5,48 +5,25 @@
             @foreach($students as $student)
                 {{ $student->workout_point }}
                 <li class="text-blue-500">
-                    @php
-                        $grade = $student->total_point;
-                    @endphp
-
-                    @if($grade < 3)
-                        <div class="badge badge-error badge-lg">
-                            {{ round($grade  , 2, PHP_ROUND_HALF_DOWN) }}
-                        </div>
-                    @endif
-
-                    @if($grade >= 3 && $grade <5)
-                        <div class="badge badge-warning badge-lg">
-                            {{ round($grade  , 2, PHP_ROUND_HALF_DOWN) }}
-                        </div>
-                    @endif
-
-                    @if($grade >= 5)
-                        <div class="badge badge-success badge-lg">
-                            {{ round($grade  , 2, PHP_ROUND_HALF_DOWN) }}
-                        </div>
-                    @endif
                     {{ $student->student_id }}
                     @if(auth()->user()->id == 1)
                     <br />
-
                     <livewire:admin.lesson.student-edit :$student :key="$student->student_id" />
-
                     <x-section-border />
                     @endif
                 </li>
             @endforeach
         </ul>
-        <label class="form-control">
-            <div class="label">
-                <span class="label-text">{{ __('File') }}</span>
-            </div>
-            <form wire:submit="import">
-                <input type="file" wire:model="file" class="file-input file-input-bordered" />
-                @error('file') <span class="text-red-700">{{ $message }}</span> @enderror
-            </form>
-        </label>
-        <button class="btn btn-primary">{{ __('Upload') }}</button>
+        <form>
+            <label class="form-control">
+                <div class="label">
+                    <span class="label-text">{{ __('File') }}</span>
+                </div>
+                    <input type="file" wire:model="file" class="file-input file-input-bordered" />
+                    @error('file') <span class="text-red-700">{{ $message }}</span> @enderror
+            </label>
+            <button class="btn btn-primary" wire:click="import">{{ __('Upload') }}</button>
+        </form>
     </div>
 </div>
 
