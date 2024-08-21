@@ -20,7 +20,7 @@ class Index extends Component
     #[On('delete-workout')]
     public function render()
     {
-        $workouts = LessonWorkout::with('lesson')->get();
+        $workouts = LessonWorkout::with('lesson')->latest()->get();
         return view('livewire.admin.workout.index', compact('workouts'));
     }
 }
