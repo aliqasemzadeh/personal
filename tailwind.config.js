@@ -7,6 +7,7 @@ const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
 export default {
+    darkMode: 'media',
     daisyui: {
         themes: ["light", "dark"],
     },
@@ -23,7 +24,6 @@ export default {
         "./vendor/wireui/wireui/ts/**/*.ts",
         "./vendor/wireui/wireui/src/WireUi/**/*.php",
         "./vendor/wireui/wireui/src/Components/**/*.php",
-        './vendor/wire-elements/modal/resources/views/*.blade.php',
     ],
 
     theme: {

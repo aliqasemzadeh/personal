@@ -17,7 +17,7 @@
                 </div>
             @endif
 
-            @if($studentWorkout->check == 0)
+            @if(1)
                 <label class="form-control">
                     <div class="label">
                         <span class="label-text">{{ __('GitHub Address') }}</span>
