@@ -1,6 +1,4 @@
-<div>
     <x-card title="{{ __('Workouts') }}">
-
         <x-input
             label="Name"
             placeholder="your name"
@@ -63,4 +61,3 @@
             @endforeach
         </summary>
     </x-card>
-</div>

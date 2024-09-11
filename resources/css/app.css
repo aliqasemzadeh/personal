@@ -13,12 +13,13 @@
         font-family: Vazirmatn, Tahoma, system-ui, sans-serif;
     }
 }
+
 @layer components {
-    .bg-secondary-200 { /* Define your class behavior here */ }
-    .bg-secondary-400 { /* Define your class behavior here */ }
-    .bg-secondary-500 { /* Define your class behavior here */ }
-    .bg-secondary-600 { /* Define your class behavior here */ }
-    .bg-secondary-700 { /* Define your class behavior here */ }
-    .bg-secondary-800 { /* Define your class behavior here */ }
-    .bg-secondary-900 { /* Define your class behavior here */ }
+    .bg-secondary-200 {	background-color: rgb(226 232 240); }
+    .bg-secondary-400 { background-color: rgb(148 163 184); }
+    .bg-secondary-500 { background-color: rgb(100 116 139); }
+    .bg-secondary-600 { 	background-color: rgb(71 85 105); }
+    .bg-secondary-700 { 	background-color: rgb(51 65 85); }
+    .bg-secondary-800 { background-color: rgb(30 41 59); }
+    .bg-secondary-900 { background-color: rgb(15 23 42);}
 }

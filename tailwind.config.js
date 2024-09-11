@@ -9,7 +9,7 @@ const colors = require('tailwindcss/colors');
 export default {
     darkMode: 'media',
     daisyui: {
-        themes: ["light", "dark"],
+        themes: false,
     },
     presets: [
         require("./vendor/wireui/wireui/tailwind.config.js"),

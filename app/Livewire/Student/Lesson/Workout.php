@@ -9,9 +9,11 @@ use Illuminate\Support\Facades\Mail;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use App\Models\LessonWorkout;
+use WireUi\Traits\WireUiActions;
 
 class Workout extends Component
 {
+    use WireUiActions;
     public LessonWorkout $workout;
     public $url;
     public StudentWorkout $studentWorkout;
@@ -38,7 +40,11 @@ class Workout extends Component
         $this->studentWorkout->save();
 
         Mail::to(User::whereIn('id',config('personal.admins'))->get())->send(new NewWorkoutSubmitMail($this->workout));
-
+        $this->notification()->send([
+            'icon' => 'info',
+            'title' => __('Submit Workout'),
+            'description' => __("Your workout saved."),
+        ]);
         $this->dispatch('saved');
     }
     public function render()
