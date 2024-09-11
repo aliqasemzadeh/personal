@@ -32,12 +32,12 @@
                 })
                 .then(function (response) {
                     // handle success
-                    //alert(response.data.url);
-                    window.location.replace(response.data.url);
+                    console.log(response.data.url);
+                    //window.location.replace(response.data.url);
                 })
                 .catch(function (error) {
                     // handle error
-                    alert(error.data);
+                    alert(error.errors.initData);
                 })
                 .finally(function () {
                     //alert("Finally");

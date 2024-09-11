@@ -38,7 +38,7 @@ class TelegramController extends Controller
             'password' => 'required',
         ]);
         if($validator->fails()) {
-            return response()->json(['status' => 'failed', 'errors' => $validator->errors()]);
+            return response()->json(['status' => 'failed', 'errors' => $validator->errors()])->setStatusCode(200);
         }
         try {
             $tgWebValid = new TgWebValid(env('TELEGRAM_BOT_TOKEN'), true);
@@ -46,7 +46,7 @@ class TelegramController extends Controller
             $user = User::where('telegram', $telegramUser->user->id)->first();
             if (!$user) {
                 if(!Auth::attempt(['email' => $request->email, 'password' =>$request->password])) {
-                    return response()->json(['status' => 'failed']);
+                    return response()->json(['status' => 'failed'])->setStatusCode(200);
                 }
                 $user->telegram = $telegramUser->user->id;
                 $user->save();
