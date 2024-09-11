@@ -37,3 +37,7 @@ Route::get('/admin/student/index', \App\Livewire\Admin\Student\Index::class)->na
 Route::get('/student/lesson/index', \App\Livewire\Student\Lesson\Index::class)->name('student.lesson.index')->middleware(\App\Http\Middleware\StudentCheck::class);
 Route::get('/student/lesson/top-student', \App\Livewire\Student\Lesson\TopStudent::class)->name('student.lesson.top-student')->middleware(\App\Http\Middleware\StudentCheck::class);
 Route::get('/student/workout/index', \App\Livewire\Student\Workout\Index::class)->name('student.workout.index')->middleware(\App\Http\Middleware\StudentCheck::class);
+
+
+Route::get('/telegram', [\App\Http\Controllers\TelegramController::class , 'index'])->name('telegram.index');
+Route::any('/telegram/signed/{user}', [\App\Http\Controllers\TelegramController::class , 'signed'])->name('telegram.signed');
