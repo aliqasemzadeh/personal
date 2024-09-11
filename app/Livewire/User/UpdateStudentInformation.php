@@ -33,6 +33,8 @@ class UpdateStudentInformation extends Component
         $this->dispatch('saved');
 
         $this->dispatch('refresh-navigation-menu');
+
+        $this->redirectRoute('student.lesson.index');
     }
 
 
