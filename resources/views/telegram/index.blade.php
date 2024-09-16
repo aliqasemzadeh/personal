@@ -24,6 +24,7 @@
     @livewireStyles
     <script>
         function initData() {
+            //alert(window.Telegram.WebApp.initData);
             axios.post('{{ route('telegram.api_login') }}',
                 {
                     initData: window.Telegram.WebApp.initData,
@@ -32,8 +33,8 @@
                 })
                 .then(function (response) {
                     // handle success
-                    console.log(response.data.url);
-                    //window.location.replace(response.data.url);
+                    // console.log(response.data.url);
+                    window.location.replace(response.data.url);
                 })
                 .catch(function (error) {
                     // handle error
