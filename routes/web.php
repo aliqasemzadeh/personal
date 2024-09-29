@@ -22,6 +22,7 @@ Route::middleware([\App\Http\Middleware\CheckIsAdmin::class])->group(function ()
     Route::get('/admin/lesson/checker', \App\Livewire\Admin\Lesson\Checker::class)->name('admin.lesson.checker');
     Route::get('/admin/lesson/edit/{lesson_id}', \App\Livewire\Admin\Lesson\Edit::class)->name('admin.lesson.edit');
     Route::get('/admin/lesson/student/{lesson_id}', \App\Livewire\Admin\Lesson\Student::class)->name('admin.lesson.student');
+    Route::get('/admin/lesson/workouts/index/{lesson_id}', \App\Livewire\Admin\Lesson\Workouts\Index::class)->name('admin.lesson.workout.index');
     Route::get('/admin/lesson/workout/{lesson_id}', \App\Livewire\Admin\Lesson\Workout::class)->name('admin.lesson.workout');
 
     Route::get('/admin/workout/index', \App\Livewire\Admin\Workout\Index::class)->name('admin.workout.index');
