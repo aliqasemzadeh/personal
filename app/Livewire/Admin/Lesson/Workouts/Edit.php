@@ -12,13 +12,11 @@ class Edit extends ModalComponent
     use WireUiActions;
     public $workout;
     public $description;
-    public $lesson_id;
     public $lesson;
     public function mount($workout_id)
     {
         $this->workout = LessonWorkout::findOrFail($workout_id);
 
-        $this->lesson_id =  $this->workout->lesson_id;;
         $this->description = $this->workout->description;
     }
 
@@ -26,10 +24,8 @@ class Edit extends ModalComponent
     {
         $this->validate([
             'description' => 'required',
-            'lesson_id' => 'required'
         ]);
 
-        $this->workout->lesson_id = $this->lesson_id;
         $this->workout->description = $this->description;
         $this->workout->save();
 
@@ -45,7 +41,7 @@ class Edit extends ModalComponent
 
     public function render()
     {
-        $lessons = Lesson::all();
+        $lessons = Lesson::latest('id')->get();
         return view('livewire.admin.lesson.workouts.edit', compact('lessons'));
     }
 }

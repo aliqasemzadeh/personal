@@ -45,7 +45,7 @@ class Create extends ModalComponent
 
     public function render()
     {
-        $lessons = Lesson::all();
+        $lessons = Lesson::latest('id')->get();
         return view('livewire.admin.lesson.workouts.create', compact('lessons'));
     }
 }
