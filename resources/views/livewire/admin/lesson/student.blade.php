@@ -1,14 +1,16 @@
 <div class="card">
     <div class="card-body">
 
-        <ul class="list-disc list-inside space-y-2">
+        <div class="grid grid-cols-6 gap-4">
             @foreach($students as $student)
-                {{ $student->workout_point }}
-                <li class="text-blue-500">
-                    {{ $student->student_id }}
-                </li>
+            <x-card title="{{ $student->student_id }}">
+                <x-badge positive label="{{ $student->workout_right }}" />
+                <x-badge negative label="{{ $student->workout_wrong }}" />
+                <x-badge neutral label="{{ $student->workout_total }}" />
+            </x-card>
             @endforeach
-        </ul>
+        </div>
+
         <form>
             <label class="form-control">
                 <div class="label">
