@@ -1,14 +1,8 @@
-    <x-card title="{{ __('Workouts') }}">
-        <x-input
-            label="Name"
-            placeholder="your name"
-        />
+    <x-card title="{{ __('Workouts') }}: {{ $user->name }}">
         <x-slot name="action">
             <x-mini-button wire:click="$dispatch('closeModal')" icon="x-mark" icon-size="md" primary flat xs />
         </x-slot>
         <summary class="card-body">
-
-            {{ $user->email }}
             @foreach($lessons as $lesson)
                 <details class="collapse bg-base-200">
                     <summary class="collapse-title text-xl font-medium">
