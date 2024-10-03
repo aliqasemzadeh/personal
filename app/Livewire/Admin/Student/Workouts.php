@@ -4,7 +4,6 @@ namespace App\Livewire\Admin\Student;
 
 use App\Models\LessonStudent;
 use App\Models\User;
-use Livewire\Component;
 use LivewireUI\Modal\ModalComponent;
 
 class Workouts extends ModalComponent
