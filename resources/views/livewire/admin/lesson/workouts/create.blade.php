@@ -4,13 +4,14 @@
         <x-mini-button wire:click="$dispatch('closeModal')" icon="x-mark" icon-size="md" primary flat xs />
     </x-slot>
 
-
-    <x-select wire:model="lesson_id" label="{{ __('Lesson') }}" placeholder="{{ __('Lesson') }}">
-        @foreach($lessons as $lessonItem)
-            <x-select.option label="{{ $lessonItem->title }}" value="{{ $lessonItem->id }}" />
-        @endforeach
-    </x-select>
     <x-textarea wire:model="description" label="{{ __('Description') }}" placeholder="{{ __('Description') }}" />
+
+    <label class="form-control">
+        <div class="label">
+            <span class="label-text">{{ __('File') }}</span>
+        </div>
+        <input type="file" class="file-input file-input-bordered w-full" wire:model="file" />
+    </label>
 
     <x-slot name="footer" class="flex items-center justify-between">
         <x-button label="Cancel" wire:click="$dispatch('closeModal')" flat />

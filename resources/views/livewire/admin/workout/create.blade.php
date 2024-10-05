@@ -12,11 +12,19 @@
                     @endforeach
                 </select>
             </label>
+
             <label class="form-control">
                 <div class="label">
                     <span class="label-text">{{ __('Description') }}</span>
                 </div>
                 <textarea wire:model="description" class="textarea textarea-bordered h-24" placeholder="{{ __('Description') }}"></textarea>
+            </label>
+
+            <label class="form-control">
+                <div class="label">
+                    <span class="label-text">{{ __('File') }}</span>
+                </div>
+                <input type="file" class="file-input file-input-bordered w-full" wire:model="file" />
             </label>
             <button class="btn btn-primary">{{ __('Create') }}</button>
         </div>

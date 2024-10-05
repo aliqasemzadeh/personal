@@ -5,15 +5,19 @@ namespace App\Livewire\Admin\Lesson\Workouts;
 use App\Models\Lesson;
 use App\Models\LessonWorkout;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use LivewireUI\Modal\ModalComponent;
 use WireUi\Traits\WireUiActions;
 
 class Create extends ModalComponent
 {
     use WireUiActions;
+    use WithFileUploads;
     public $description;
     public $lesson_id;
     public $lesson;
+    public $file;
+
     public function mount($lesson_id)
     {
         $this->lesson_id = $lesson_id;
@@ -24,13 +28,17 @@ class Create extends ModalComponent
     {
         $this->validate([
             'description' => 'required',
-            'lesson_id' => 'required'
         ]);
 
-        LessonWorkout::create([
+        $workout = LessonWorkout::create([
             'description' => $this->description,
             'lesson_id' => $this->lesson_id
         ]);
+
+        if($this->file){
+            $workout->file = $this->file->store(path: 'workouts');
+            $workout->save();
+        }
 
         $this->notification()->send([
             'icon' => 'info',

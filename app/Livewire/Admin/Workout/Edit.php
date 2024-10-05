@@ -5,13 +5,16 @@ namespace App\Livewire\Admin\Workout;
 use App\Models\Lesson;
 use App\Models\LessonWorkout;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class Edit extends Component
 {
+    use WithFileUploads;
     public $description;
     public $lesson_id;
     public $workout_id;
     public $workout;
+    public $file;
 
     public function mount($workout_id)
     {
@@ -26,6 +29,10 @@ class Edit extends Component
             'description' => 'required',
             'lesson_id' => 'required'
         ]);
+
+        if($this->file){
+            $this->workout->file = $this->file->store(path: 'workouts');
+        }
 
         $this->workout->lesson_id = $this->lesson_id;
         $this->workout->description = $this->description;
