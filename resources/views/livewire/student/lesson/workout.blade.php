@@ -2,6 +2,9 @@
     <div class="card">
         <div class="card-body">
             {!! nl2br($workout->description) !!}
+            @if($workout->file)
+                <img src="{{ asset($workout->file) }}">
+            @endif
 
             @if($studentWorkout->check == 1)
                 <div role="alert" class="alert alert-success">

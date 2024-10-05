@@ -30,7 +30,7 @@ class Edit extends ModalComponent
         ]);
 
         if($this->file){
-            $this->workout->file = $this->file->store(path: 'public/workouts');
+            $this->workout->file = $this->file->store(path: 'workouts');
         }
 
         $this->workout->description = $this->description;

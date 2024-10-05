@@ -27,7 +27,7 @@ class Create extends Component
         ]);
 
         if($this->file){
-            $workout->file = $this->file->store(path: 'public/workouts');
+            $workout->file = $this->file->store(path: 'workouts');
             $workout->save();
         }
 
