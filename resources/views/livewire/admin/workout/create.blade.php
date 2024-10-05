@@ -26,6 +26,9 @@
                 </div>
                 <input type="file" class="file-input file-input-bordered w-full" wire:model="file" />
             </label>
+            @if ($file)
+                <img src="{{ $file->temporaryUrl() }}">
+            @endif
             <button class="btn btn-primary">{{ __('Create') }}</button>
         </div>
     </div>

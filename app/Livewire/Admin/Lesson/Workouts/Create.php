@@ -36,7 +36,7 @@ class Create extends ModalComponent
         ]);
 
         if($this->file){
-            $workout->file = $this->file->store(path: 'workouts');
+            $workout->file = $this->file->store(path: 'public/workouts');
             $workout->save();
         }
 
