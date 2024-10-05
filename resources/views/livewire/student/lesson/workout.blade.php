@@ -3,7 +3,7 @@
         <div class="card-body">
             {!! nl2br($workout->description) !!}
             @if($workout->file)
-                <img src="{{ asset($workout->file) }}">
+                <img src="{{ asset(\Illuminate\Support\Facades\Storage::url($workout->file)) }}">
             @endif
 
             @if($studentWorkout->check == 1)

@@ -27,6 +27,9 @@
             @if ($file)
                 <img src="{{ $file->temporaryUrl() }}">
             @endif
+            @if($workout->file)
+                <img src="{{ asset(\Illuminate\Support\Facades\Storage::url($workout->file)) }}">
+            @endif
             <button class="btn btn-primary">{{ __('Edit') }}</button>
         </div>
     </div>

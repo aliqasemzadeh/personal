@@ -27,8 +27,7 @@ class Create extends Component
         ]);
 
         if($this->file){
-            $workout->file = $this->file->store(path: 'workouts');
-            $workout->save();
+            $workout->file = $this->file->store(path: 'public/workouts');
         }
 
         $this->redirectRoute('admin.workout.index');

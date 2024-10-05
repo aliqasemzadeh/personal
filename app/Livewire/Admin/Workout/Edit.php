@@ -31,7 +31,7 @@ class Edit extends Component
         ]);
 
         if($this->file){
-            $this->workout->file = $this->file->storePublicly(path: 'workouts');
+            $this->workout->file = $this->file->store(path: 'public/workouts');
         }
 
         $this->workout->lesson_id = $this->lesson_id;
