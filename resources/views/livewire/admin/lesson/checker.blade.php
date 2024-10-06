@@ -17,6 +17,10 @@
                         <td>{{ \App\Models\User::findOrFail($user->checker_user_id)->name }}</td>
                     </tr>
                 @endforeach
+                <tr :key="baharalipour">
+                    <td>{{ 187 }}</td>
+                    <td>{{ 'baharalipour' }}</td>
+                </tr>
                 </tbody>
                 <!-- foot -->
                 <tfoot>
