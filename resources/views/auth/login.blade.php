@@ -38,8 +38,7 @@
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
-
-                <x-button class="ms-4" type="submit">
+                <x-button class="btn btn-outline btn-primary btn-sm" type="submit">
                     {{ __('Log in') }}
                 </x-button>
             </div>
