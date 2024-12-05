@@ -17,6 +17,8 @@ Route::middleware([
 });
 
 Route::middleware([\App\Http\Middleware\CheckIsAdmin::class])->group(function () {
+    Route::get('/admin/blog/post/index', \App\Livewire\Admin\Blog\Post\Index::class)->name('admin.blog.post.index');
+
     Route::get('/admin/lesson/index', \App\Livewire\Admin\Lesson\Index::class)->name('admin.lesson.index');
     Route::get('/admin/lesson/create', \App\Livewire\Admin\Lesson\Create::class)->name('admin.lesson.create');
     Route::get('/admin/lesson/checker', \App\Livewire\Admin\Lesson\Checker::class)->name('admin.lesson.checker');
