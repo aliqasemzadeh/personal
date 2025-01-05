@@ -1,4 +1,5 @@
 <div>
+    <x-button primary  label="Default" />
     <div class="overflow-x-auto">
         <table class="table">
             <!-- head -->
