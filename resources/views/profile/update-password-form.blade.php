@@ -29,8 +29,6 @@
             {{ __('Saved.') }}
         </x-action-message>
 
-        <x-button type="submit">
-            {{ __('Save') }}
-        </x-button>
+        <x-button primary label="{{ __('Save') }}" />
     </x-slot>
 </x-form-section>
