@@ -11,15 +11,13 @@
 
         <!-- GitHub -->
         <div class="col-span-6 sm:col-span-4">
-            <x-label for="github" value="{{ __('GitHub') }}" />
-            <x-input id="github" type="text" class="mt-1 block w-full" wire:model="github" required autocomplete="github" />
+            <x-input label="{{ __('GitHub') }}" id="github" type="text" class="mt-1 block w-full" wire:model="github" required autocomplete="github" />
             <x-input-error for="github" class="mt-2" />
         </div>
 
         <!-- Student ID -->
         <div class="col-span-6 sm:col-span-4">
-            <x-label for="student_id" value="{{ __('Student ID') }}" />
-            <x-input id="student_id" type="tel" class="mt-1 block w-full" wire:model="student_id" required autocomplete="student_id" />
+            <x-input label="{{ __('Student ID') }}" id="student_id" type="tel" class="mt-1 block w-full" wire:model="student_id" required autocomplete="student_id" />
             <x-input-error for="student_id" class="mt-2" />
         </div>
     </x-slot>
